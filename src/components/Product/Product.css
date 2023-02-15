@@ -1,0 +1,35 @@
+:root {
+  --cell-height: 300px;
+}
+
+
+.product-cell {
+  width: 300px;
+  min-height: var(--cell-height);
+  max-height: calc(var(--cell-height) + 200px);
+  margin-bottom: 20px;
+  border: 1px solid black;
+  transition: all ease-in-out 0.3s;
+
+
+  box-shadow: 10px 10px lightblue;
+}
+
+
+.product-cell__inner-content {
+  text-align: center;
+  /* text-overflow: ellipsis; */
+  overflow-wrap: break-word;
+}
+
+
+.inner-content__picture {
+  height: calc(var(--cell-height) / 1.5);
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.inner-content__title {
+  font-size: 1em;
+}

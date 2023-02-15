@@ -1,0 +1,29 @@
+
+
+.Footer {
+  background-color: black;
+  min-height: 300px;
+}
+
+
+.Footer__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+
+.container__options {
+  display: flex;
+  list-style-type: none;
+  
+}
+
+.options__option {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}

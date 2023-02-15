@@ -1,0 +1,26 @@
+
+
+.Products {
+  display: flex;
+  justify-content: center;
+}
+
+
+.products-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 80%;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .products-container {
+    flex-flow: column wrap;
+    align-items: center;
+  }
+}
+
+
+

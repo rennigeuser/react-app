@@ -1,0 +1,98 @@
+
+.Header {
+  width: 100vw;
+  padding: 20px;
+}
+
+.Header__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.contaner__left-part {
+  display: flex;
+  flex-direction: row;
+}
+
+.contaner__right-part {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-part__options {
+  display: flex;
+  flex-direction: row;
+
+  list-style: none;
+}
+
+.right-part__options {
+  display: flex;
+  flex-direction: row;
+}
+
+.right-part__btn {
+  font-size: 1em;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 500;
+  background-color: teal;
+  border: none;
+}
+
+.btn_otlined {
+  border: 1px solid black;
+}
+
+.right-part__input {
+  background: none;
+  border: none;
+  background-color: gray;
+  transition: all ease-in-out 0.2s;
+  font-size: 1em;
+}
+
+.right-part__input:focus {
+  background-color: #fff;
+}
+
+
+.options__element {
+  display: inline-block;
+}
+
+.options__element {
+  font-size: 1em;
+}
+
+
+.Header__input {
+}
+
+
+/* Icon */
+
+.Header__icon {
+
+}
+
+.Header__icon_color_teal {
+  color: teal;
+}
+
+.Header__icon_size_md40 {
+  font-size: 40px;
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+  .Header__container {
+    flex-direction: column;
+    justify-content: center;  
+  }
+}
+
+/* ---- */
