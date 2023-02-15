@@ -1,7 +1,18 @@
 import React from 'react'
 import './NavBar.css'
+import { useState, useContext } from 'react';
+import SignInModal from '../SignInModal/SignInModal';
+import SignUpModal from '../SignUpModal/SignUpModal';
+import { AuthContext } from '../../context';
+
 
 export default function NavBar(props: {}) {
+  const [activeSignIn, setActiveSignIn] = useState<boolean>(false);
+  const [activeSignUp, setActiveSignUp] = useState<boolean>(false);
+  
+  const { isAuth } = useContext(AuthContext)
+  
+  
   return (
     <header className='Header'>
 
@@ -17,13 +28,25 @@ export default function NavBar(props: {}) {
         </div>
 
         <div className="container__right-part">
+
           <input className='right-part__input' type="text" placeholder='Search'/>
-          <input className='right-part__btn' type="button" value='SignIn'/>
-          <input className='right-part__btn btn_otlined' type="button" value='SignUp'/>
+          {
+            isAuth
+              ?
+              <>
+              <input onClick={() => setActiveSignIn(true)} className='right-part__btn' type="button" value='Sign In'/>
+              <input onClick={() => setActiveSignUp(true)} className='right-part__btn btn_otlined' type="button" value='Sign Up'/>
+              <SignInModal active={activeSignIn} setActive={setActiveSignIn}/>
+              <SignUpModal active={activeSignUp} setActive={setActiveSignUp}/>
+              </>
+              :
+              <input type="button" className='right-part__btn btn_red btn_otlined' value="Log out" />
+          }
+
         </div>
       </div>
+      
 
     </header>
-    
   )
 }

@@ -1,0 +1,15 @@
+
+
+
+.Button {
+  background-color: teal;
+  width: 50%;
+  border: none;
+  font-size: 20px;
+  transition: background-color .3s;
+}
+
+
+.Button:hover {
+  background-color: rgba(0, 128, 128, 0.7);
+}

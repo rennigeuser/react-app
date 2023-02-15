@@ -1,0 +1,19 @@
+
+
+
+.Input {
+  border: 2px solid teal;
+  background-color: #fff;
+  width: 100%;
+  padding: 20px;
+  outline: none;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 20px;
+  
+  transition: background-color, .4s;
+}
+
+.Input:focus {
+  background-color: rgba(0, 128, 128, 0.2);
+}

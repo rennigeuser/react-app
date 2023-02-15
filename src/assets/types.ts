@@ -1,3 +1,4 @@
+import React, { ReactNode } from "react"
 
 
 export interface ProductData { 
@@ -16,4 +17,21 @@ export interface contextStorage {
 }
 
 
+export interface ModalArgs {
+  active: boolean,
+  setActive(value: boolean): void
+  children?: React.ReactNode
+}
 
+
+export interface Props {
+  children?: ReactNode;
+  [key: string]: any;
+}
+
+
+export type Ref = HTMLInputElement
+
+
+
+export interface InputArgs extends React.PropsWithRef<any>{ }

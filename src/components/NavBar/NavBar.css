@@ -1,3 +1,7 @@
+:root {
+  --same-padding: 5px;
+}
+
 
 .Header {
   width: 100vw;
@@ -34,27 +38,45 @@
 
 .right-part__btn {
   font-size: 1em;
-  border-radius: 50px;
   color: #fff;
   font-weight: 500;
   background-color: teal;
   border: none;
+  padding: var(--same-padding)
+}
+
+.right-part__btn:hover {
+  color: #24292f
 }
 
 .btn_otlined {
-  border: 1px solid black;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+.btn_otlined:hover {
+  border-color: #24292f;
+}
+
+.btn_red {
+  background-color: red;
+  color: black;
 }
 
 .right-part__input {
-  background: none;
   border: none;
-  background-color: gray;
+  outline: none;
+  background-color: rgb(152, 146, 146);
   transition: all ease-in-out 0.2s;
   font-size: 1em;
+  padding: var(--same-padding);
+  border-radius: 20px;
+  box-sizing: border-box;
 }
 
 .right-part__input:focus {
   background-color: #fff;
+  border: 1px solid rgb(152, 146, 146);
 }
 
 

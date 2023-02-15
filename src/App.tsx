@@ -1,15 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css'
-import { Route, Routes, Link, redirect } from 'react-router-dom'
 import { BrowserRouter } from "react-router-dom";
 import NavBar from './components/NavBar/NavBar';
-import AdvertCarousel from './components/AdvertCarousel/AdvertCarousel';
-import ProductsSection from './components/ProductsSection/ProductsSection';
-import Footer from './components/Footer/Footer';
-import Loader from './components/UI/Loader/Loader';
-import useFetch from './hooks/useFetch';
-import PostService from './API/PostService';
-import { ProductData, contextStorage } from './assets/types'
 import { AuthContext } from './context';
 import AppRouter from './components/AppRouter/AppRouter';
 
@@ -26,8 +18,6 @@ function App() {
     setIsLoading(false);
   }, [])
 
-
-
   return (
     <>
       <AuthContext.Provider value={{
@@ -37,7 +27,7 @@ function App() {
         setIsLoading
       }}>
         <BrowserRouter>
-          <NavBar/>
+          <NavBar />
           <AppRouter/>
         </BrowserRouter>
       </AuthContext.Provider>
