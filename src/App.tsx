@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import './App.css'
 import { BrowserRouter } from "react-router-dom";
 import NavBar from './components/NavBar/NavBar';
@@ -17,6 +17,17 @@ function App() {
     }
     setIsLoading(false);
   }, [])
+  
+
+  const authenticate = () => {
+    if (isAuth) {
+      setIsAuth(false);
+      localStorage.removeItem('auth');
+    } else {
+      setIsAuth(true);
+      localStorage.setItem('auth', 'true');
+    }
+  }
 
   return (
     <>
@@ -24,7 +35,8 @@ function App() {
         isAuth,
         setIsAuth,
         isLoading,
-        setIsLoading
+        setIsLoading,
+        authenticate,
       }}>
         <BrowserRouter>
           <NavBar />

@@ -28,6 +28,10 @@ export default function AdvertCarousel({slides}: { slides: string[] }) {
     setIndex(index + 1 > slides.length - 1 ? 0 : index + 1)
   }
 
+  // function handleClick() {
+  //   setIndex(i);
+  // }
+
 
   return (
     <section style={{display: 'flex', justifyContent: 'center', marginBottom: '100px'}}>
@@ -36,8 +40,13 @@ export default function AdvertCarousel({slides}: { slides: string[] }) {
         <div ref={rightArrowRef} onClick={getNext} className="arrow slider__right-arrow"/>
         <div style={{ backgroundImage: `url(${slides[index]})` }} className="slider__slide"/>
         <div className="slider__options-container">
-          { slides.map((_, i) =>
-           <div key={i} onClick={() => setIndex(i)} className="slider__point"/>) 
+          { slides.map((_, i) => {
+              return (
+                <div key={i} className="slider__point" >
+                  <button onClick={() => setIndex(i)} className="point__button"/>
+                </div>
+              );
+            }) 
           }
         </div>
         

@@ -6,7 +6,7 @@ import { AuthContext } from '../../context';
 import Loader from '../UI/Loader/Loader';
 
 
-export default function ProductsSection({ products }: { products: ProductData[] }) {
+export default function ProductsSection({ products }: { products: ProductData[] | any }) {
   
   const { isLoading } = useContext(AuthContext);
   
@@ -14,8 +14,8 @@ export default function ProductsSection({ products }: { products: ProductData[] 
   return (
     <section className='Products'>
       <div className='products-container'>
-        {products.map((p, i) =>
-         <Product title={p.title} picture={p.picture} alt={p.alt} key={i}/>)}     
+        {products.map((p: any, i: any) =>
+         <Product title={p.title} picture={p.url} alt={p.alt} key={i}/>)}     
       </div>
     </section>
   )

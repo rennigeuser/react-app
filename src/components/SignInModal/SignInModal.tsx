@@ -9,7 +9,7 @@ import Button from '../UI/Button/Button'
 
 export default function SignInModal({active, setActive}: ModalArgs) { 
 
-  const { setIsAuth } = useContext(AuthContext);  
+  const { setIsAuth, authenticate } = useContext(AuthContext);  
 
   const userNameRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
@@ -19,7 +19,7 @@ export default function SignInModal({active, setActive}: ModalArgs) {
     e.preventDefault();
     userNameRef.current!.value = "";
     passwordRef.current!.value = "";
-    setIsAuth(true);
+    authenticate();
     setActive(false);
   }
 

@@ -10,14 +10,14 @@ export default function NavBar(props: {}) {
   const [activeSignIn, setActiveSignIn] = useState<boolean>(false);
   const [activeSignUp, setActiveSignUp] = useState<boolean>(false);
   
-  const { isAuth } = useContext(AuthContext)
+  const { isAuth, authenticate } = useContext(AuthContext)
   
   
   return (
     <header className='Header'>
 
       <div className='Header__container'>
-        <div className="contaner__left-part">
+        <div className="container__left-part">
           <i className="Header__icon Header__icon_color_teal Header__icon_size_md40 material-icons">home</i>
           <ul className='left-part__options'>
             <li className="options__element">Option1</li>
@@ -33,14 +33,14 @@ export default function NavBar(props: {}) {
           {
             isAuth
               ?
+              <input onClick={authenticate} type="button" className='right-part__btn btn_red btn_otlined' value="Log out" />
+              :
               <>
-              <input onClick={() => setActiveSignIn(true)} className='right-part__btn' type="button" value='Sign In'/>
+              <input onClick={() => setActiveSignIn(true)} className='right-part__btn btn_otlined' type="button" value='Sign In'/>
               <input onClick={() => setActiveSignUp(true)} className='right-part__btn btn_otlined' type="button" value='Sign Up'/>
               <SignInModal active={activeSignIn} setActive={setActiveSignIn}/>
               <SignUpModal active={activeSignUp} setActive={setActiveSignUp}/>
               </>
-              :
-              <input type="button" className='right-part__btn btn_red btn_otlined' value="Log out" />
           }
 
         </div>

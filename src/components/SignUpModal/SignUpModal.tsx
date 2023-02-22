@@ -17,6 +17,7 @@ export default function SignUpModal({active, setActive}: ModalArgs) {
     userNameRef.current!.value = "";
     passwordRef.current!.value = "";
     repeatPasswordRef.current!.value = "";
+    setActive(false);
   }
 
   return (

@@ -14,14 +14,15 @@
   justify-content: space-around;
 }
 
-.contaner__left-part {
+.container__left-part {
   display: flex;
   flex-direction: row;
 }
 
-.contaner__right-part {
+.container__right-part {
   display: flex;
   flex-direction: row;
+  gap: 10px;
 }
 
 .left-part__options {

@@ -2,25 +2,27 @@ import React, { ReactNode } from "react"
 
 
 export interface ProductData { 
-  title: string,
-  picture: string,
-  alt?: string,
-  body?: string
+  title: string;
+  picture: string;
+  thumbnailUrl?:string;
+  alt?: string;
+  body?: string;
 }
 
 
 export interface contextStorage {
-  isAuth: boolean,
-  setIsAuth(v: boolean): void,
-  isLoading: boolean,
-  setIsLoading(v: boolean): void
+  isAuth: boolean;
+  setIsAuth(v: boolean): void;
+  isLoading: boolean;
+  setIsLoading(v: boolean): void;
+  authenticate(): void;
 }
 
 
 export interface ModalArgs {
-  active: boolean,
-  setActive(value: boolean): void
-  children?: React.ReactNode
+  active: boolean;
+  setActive(value: boolean): void;
+  children?: React.ReactNode;
 }
 
 
@@ -30,7 +32,7 @@ export interface Props {
 }
 
 
-export type Ref = HTMLInputElement
+export type Ref = HTMLInputElement;
 
 
 
